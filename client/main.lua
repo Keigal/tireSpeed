@@ -19,6 +19,12 @@ Citizen.CreateThread(function()
         for i = 0, maxTires, 1
         do
             local wheelHealth = GetVehicleWheelHealth(vehicle, i)
+
+            TriggerEVent('chat:addMessage', {
+                color = {255, 0, 0},
+                multiline = true,
+                args = {'Tire ', i, ' Health: ', wheelHealth}
+            })
             
             if (wheelHealth == 0)
             then
@@ -29,23 +35,17 @@ Citizen.CreateThread(function()
 
         -- Logic for limiting speed
 
-        TriggerEvent('chat:addMessage', {
-            color = {255, 0, 0},
-            multiline = true,
-            args = {'Max tires: ', maxTires}
-        })
+        -- TriggerEvent('chat:addMessage', {
+        --     color = {255, 0, 0},
+        --     multiline = true,
+        --     args = {'Max tires: ', maxTires}
+        -- })
 
-        TriggerEvent('chat:addMessage', {
-            color = {255, 0, 0},
-            multiline = true,
-            args = {'Popped tires: ', poppedTires}
-        })
-
-        TriggerEvent('chat:addMessage', {
-            color = {255, 0, 0},
-            multiline = false,
-            args = {'tireSpeed ran'}
-        })
+        -- TriggerEvent('chat:addMessage', {
+        --     color = {255, 0, 0},
+        --     multiline = true,
+        --     args = {'Popped tires: ', poppedTires}
+        -- })
 
     end
 
