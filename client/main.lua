@@ -9,7 +9,13 @@ Citizen.CreateThread(function()
 
         local playerPed = PlayerPedId()
 
-        local vehicle = GetVehiclePedIsIn(playerPed)
+        local vehicle = GetVehiclePedIsIn(playerPed, false)
+
+        TriggerEvent('chat:addMessage', {
+            color = {255, 0, 0},
+            multiline = true,
+            args = {'Vehicle', vehicle}
+        })
 
         local maxTires = GetVehicleNumberOfWheels(vehicle)
 
@@ -23,7 +29,7 @@ Citizen.CreateThread(function()
             TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
                 multiline = true,
-                args = {'Tire ', i, ' Health: ', wheelHealth}
+                args = {'Tire Health', wheelHealth}
             })
             
             if (wheelHealth == 0)
