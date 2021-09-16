@@ -45,6 +45,7 @@ Citizen.CreateThread(function()
                 SetVehicleMaxSpeed(60)
             else
                 SetVehicleMaxSpeed(40)
+            end
 
             TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
