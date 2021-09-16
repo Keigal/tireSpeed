@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
         do
             local wheelHealth = GetVehicleWheelHealth(vehicle, i)
 
-            TriggerEVent('chat:addMessage', {
+            TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
                 multiline = true,
                 args = {'Tire ', i, ' Health: ', wheelHealth}
