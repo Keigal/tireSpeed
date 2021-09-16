@@ -12,4 +12,4 @@ Config.twoTires = 80.0
 Config.threeTires = 60.0
 
 -- Four tires popped
-Config.fourtires = 40.0
+Config.fourTires = 40.0
