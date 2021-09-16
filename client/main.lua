@@ -11,7 +11,7 @@ Citizen.CreateThread(function()
 
         local vehicle = GetVehiclePedIsIn(playerPed, false)
 
-        if !(vehicle == 0)
+        if (vehicle ~= 0)
         then
 
             local maxTires = GetVehicleNumberOfWheels(vehicle)
