@@ -19,16 +19,9 @@ Citizen.CreateThread(function()
             local poppedTires = 0
 
             -- Gets number of poppedTires
-            for i = 0, maxTires, 1
+            -- Wheel locations are numbered non-standard in FiveM, so we check each location.
+            for i = 0, 5, 1
             do
-                -- local wheelHealth = GetVehicleWheelHealth(vehicle, i)
-
-                -- TriggerEvent('chat:addMessage', {
-                --     color = {255, 0, 0},
-                --     multiline = true,
-                --     args = {'Tire Health', wheelHealth}
-                -- })
-                
                 if (IsVehicleTyreBurst(vehicle, i, false))
                 then
                     poppedTires = poppedTires + 1
@@ -38,11 +31,20 @@ Citizen.CreateThread(function()
 
             -- Logic for limiting speed
 
-            -- TriggerEvent('chat:addMessage', {
-            --     color = {255, 0, 0},
-            --     multiline = true,
-            --     args = {'Max tires: ', maxTires}
-            -- })
+            if (poppedTires == 0)
+            then
+                SetVehicleMaxSpeed(0)
+            elseif (poppedTires == 1)
+            then
+                SetVehicleMaxSpeed(100)
+            elseif (poppedTires == 2)
+            then
+                SetVehicleMaxSpeed(80)
+            elseif (poppedTires == 3)
+            then
+                SetVehicleMaxSpeed(60)
+            else
+                SetVehicleMaxSpeed(40)
 
             TriggerEvent('chat:addMessage', {
                 color = {255, 0, 0},
