@@ -11,6 +11,8 @@ Citizen.CreateThread(function()
 
         local vehicle = GetVehiclePedIsIn(playerPed, false)
 
+        local maxSpeed = 0.0
+
         if (vehicle ~= 0)
         then
 
@@ -34,18 +36,22 @@ Citizen.CreateThread(function()
 
             if (poppedTires == 0)
             then
-                SetVehicleMaxSpeed(vehicle, 0.0)
+                SetVehicleMaxSpeed(vehicle, maxSpeed)
             elseif (poppedTires == 1)
             then
-                SetVehicleMaxSpeed(vehicle, 100.0 * 0.447)
+                maxSpeed = Config.oneTire * 0.447
+                SetVehicleMaxSpeed(vehicle, maxSpeed)
             elseif (poppedTires == 2)
             then
-                SetVehicleMaxSpeed(vehicle, 80.0 * 0.447)
+                maxSpeed = Config.twoTires * 0.447
+                SetVehicleMaxSpeed(vehicle, maxSpeed)
             elseif (poppedTires == 3)
             then
-                SetVehicleMaxSpeed(vehicle, 60.0 * 0.447)
+                maxSpeed = Config.threeTires * 0.447
+                SetVehicleMaxSpeed(vehicle, maxSpeed)
             else
-                SetVehicleMaxSpeed(vehicle, 40.0 * 0.447)
+                maxSpeed = Config.fourTires * 0.447
+                SetVehicleMaxSpeed(vehicle, maxSpeed)
             end
 
             TriggerEvent('chat:addMessage', {
