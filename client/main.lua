@@ -30,21 +30,22 @@ Citizen.CreateThread(function()
             end
 
             -- Logic for limiting speed
+            -- To convert from MPH to m/s we multiply by 0.447
 
             if (poppedTires == 0)
             then
                 SetVehicleMaxSpeed(vehicle, 0.0)
             elseif (poppedTires == 1)
             then
-                SetVehicleMaxSpeed(vehicle, 100.0)
+                SetVehicleMaxSpeed(vehicle, 100.0 * 0.447)
             elseif (poppedTires == 2)
             then
-                SetVehicleMaxSpeed(vehicle, 80.0)
+                SetVehicleMaxSpeed(vehicle, 80.0 * 0.447)
             elseif (poppedTires == 3)
             then
-                SetVehicleMaxSpeed(vehicle, 60.0)
+                SetVehicleMaxSpeed(vehicle, 60.0 * 0.447)
             else
-                SetVehicleMaxSpeed(vehicle, 40.0)
+                SetVehicleMaxSpeed(vehicle, 40.0 * 0.447)
             end
 
             TriggerEvent('chat:addMessage', {
