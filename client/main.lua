@@ -36,15 +36,15 @@ Citizen.CreateThread(function()
                 SetVehicleMaxSpeed(vehicle, 0)
             elseif (poppedTires == 1)
             then
-                SetVehicleMaxSpeed(vehicle, 100*2.23694+0.5)
+                SetVehicleMaxSpeed(vehicle, 100)
             elseif (poppedTires == 2)
             then
-                SetVehicleMaxSpeed(vehicle, 80*2.23694+0.5)
+                SetVehicleMaxSpeed(vehicle, 80)
             elseif (poppedTires == 3)
             then
-                SetVehicleMaxSpeed(vehicle, 60*2.23694+0.5)
+                SetVehicleMaxSpeed(vehicle, 60)
             else
-                SetVehicleMaxSpeed(vehicle, 40*2.23694+0.5)
+                SetVehicleMaxSpeed(vehicle, 40)
             end
 
             TriggerEvent('chat:addMessage', {
