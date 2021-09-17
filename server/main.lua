@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
                 TriggerClientEvent('chat:addMessage', -1, {
                     color = {255, 0, 0},
                     multiline = true,
-                    args = {'server-owner: ', vehNetID}
+                    args = {'server-owner: ', owner}
                 })
 
                 -- Tells owner's client to run event to limit speed
