@@ -3,7 +3,7 @@ Citizen.CreateThread(function()
 
     while true do
 
-        Citizen.Wait(10)
+        Citizen.Wait(5000)
 
         TriggerClientEvent('chat:addMessage', -1, {
             color = {255, 0, 0},
