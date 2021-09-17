@@ -6,10 +6,10 @@ Citizen.CreateThread(function()
         TriggerClientEvent('chat:addMessage', -1, {
             color = {255, 0, 0},
             multiline = true,
-            args = {'Thread ran.'}
+            args = {'Server', 'Inside while loop'}
         })
 
-        Citizen.Wait(5)
+        Wait(5000)
 
         -- Get all players in server
         for _, playerId in ipairs(GetPlayers()) do
