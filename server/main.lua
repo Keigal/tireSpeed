@@ -4,7 +4,6 @@ Citizen.CreateThread(function()
     while true do
 
         Citizen.Wait(10)
-        print('test')
 
         -- Get all players in server
         for _, playerId in ipairs(GetPlayers()) do
