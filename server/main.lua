@@ -9,7 +9,7 @@ Citizen.CreateThread(function()
             args = {'Thread ran.'}
         })
 
-        Citizen.Wait(5000)
+        Citizen.Wait(5)
 
         -- Get all players in server
         for _, playerId in ipairs(GetPlayers()) do
