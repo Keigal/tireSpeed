@@ -9,6 +9,17 @@ AddEventHandler('tireSpeed:client:checkTires', function(owner)
     local ped = GetPlayerPed(owner)
     local veh = GetVehiclePedIsIn(ped)
 
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client-ped: ', ped}
+    })
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client-veh: ', veh}
+    })
+
     -- Gets number of poppedTires
     -- Wheel locations are numbered non-standard in FiveM, so we check each location.
     for i = 0, 5, 1
