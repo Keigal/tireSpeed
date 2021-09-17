@@ -33,16 +33,16 @@ Citizen.CreateThread(function()
             then
 
                 -- Gets network id of vehicle
-                local vehNetID = NetworkGetNetworkIdFromEntity(veh)
+                -- local vehNetID = NetworkGetNetworkIdFromEntity(veh)
 
-                TriggerClientEvent('chat:addMessage', -1, {
-                    color = {255, 0, 0},
-                    multiline = true,
-                    args = {'server-vehNetID: ', vehNetID}
-                })
+                -- TriggerClientEvent('chat:addMessage', -1, {
+                --     color = {255, 0, 0},
+                --     multiline = true,
+                --     args = {'server-vehNetID: ', vehNetID}
+                -- })
 
                 -- Gets owner of vehicle entity
-                local owner = NetworkGetEntityOwner(vehNetID)
+                local owner = NetworkGetEntityOwner(veh)
 
                 TriggerClientEvent('chat:addMessage', -1, {
                     color = {255, 0, 0},
