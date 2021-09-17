@@ -1,25 +1,7 @@
 
--- Thread checks tire status and acts appropriately
-Citizen.CreateThread(function()
-
-    while true do
-
-        -- Only runs the logic if player is in a vehicle.
-        if (vehicle ~= 0)
-        then
-
-            
-
-        end
-    
-    end
-
-end)
-
 -- Event to limit speed of vehicle, server instructs client on when to run event
 RegisterNetEvent('tireSpeed:client:checkTires')
 AddEventHandler('tireSpeed:client:checkTires', function(owner)
-
 
     local poppedTires = 0
     local maxSpeed = 0.0
