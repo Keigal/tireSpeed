@@ -1,12 +1,12 @@
 
 -- Event to limit speed of vehicle, server instructs client on when to run event
 RegisterNetEvent('tireSpeed:client:checkTires')
-AddEventHandler('tireSpeed:client:checkTires', function(owner)
+AddEventHandler('tireSpeed:client:checkTires', function()
 
     local poppedTires = 0
     local maxSpeed = 0.0
 
-    local ped = GetPlayerPed(owner)
+    local ped = GetPlayerPed(-1)
     local veh = GetVehiclePedIsIn(ped)
 
     TriggerEvent('chat:addMessage', {

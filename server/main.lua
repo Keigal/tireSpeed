@@ -5,12 +5,6 @@ Citizen.CreateThread(function()
 
         Citizen.Wait(5000)
 
-        TriggerClientEvent('chat:addMessage', -1, {
-            color = {255, 0, 0},
-            multiline = true,
-            args = {'Server', 'Inside while loop'}
-        })
-
         -- Get all players in server
         for _, playerId in ipairs(GetPlayers()) do
 
@@ -51,7 +45,7 @@ Citizen.CreateThread(function()
                 })
 
                 -- Tells owner's client to run event to limit speed
-                TriggerClientEvent('tireSpeed:client:checkTires', owner, owner)
+                TriggerClientEvent('tireSpeed:client:checkTires', owner)
 
             end
 
