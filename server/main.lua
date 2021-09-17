@@ -12,7 +12,7 @@ Citizen.CreateThread(function()
         Wait(5)
 
         -- Get all players in server
-        for _, playerId in ipairs(GetPlayers()) do
+        for playerId in GetPlayers() do
 
             local ped = GetPlayerPed(playerId)
             local veh = GetVehiclePedIsIn(ped, false)
