@@ -11,38 +11,12 @@ Citizen.CreateThread(function()
             local ped = GetPlayerPed(playerId)
             local veh = GetVehiclePedIsIn(ped, false)
 
-            TriggerClientEvent('chat:addMessage', -1, {
-                color = {255, 0, 0},
-                multiline = true,
-                args = {'server-ped', ped}
-            })
-            TriggerClientEvent('chat:addMessage', -1, {
-                color = {255, 0, 0},
-                multiline = true,
-                args = {'server-veh', veh}
-            })
-
             -- Checks if ped is in vehicle
             if (veh ~= 0)
             then
 
-                -- Gets network id of vehicle
-                -- local vehNetID = NetworkGetNetworkIdFromEntity(veh)
-
-                -- TriggerClientEvent('chat:addMessage', -1, {
-                --     color = {255, 0, 0},
-                --     multiline = true,
-                --     args = {'server-vehNetID: ', vehNetID}
-                -- })
-
                 -- Gets owner of vehicle entity
                 local owner = NetworkGetEntityOwner(veh)
-
-                TriggerClientEvent('chat:addMessage', -1, {
-                    color = {255, 0, 0},
-                    multiline = true,
-                    args = {'server-owner: ', owner}
-                })
 
                 -- Tells owner's client to run event to limit speed
                 TriggerClientEvent('tireSpeed:client:checkTires', owner)
