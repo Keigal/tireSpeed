@@ -1,41 +1,27 @@
 
--- Compacts - 0
+-- Primary event which runs 
 RegisterNetEvent('tireSpeed:client:checkTires')
 AddEventHandler('tireSpeed:client:checkTires', function()
  
     local ped = GetPlayerPed(-1)
     local veh = GetVehiclePedIsIn(ped)
     local vehClass = GetVehicleClass(veh)
-
     local eventName = "tireSpeed:client:checkTires:" .. vehClass
 
-    TriggerEvent('chat:addMessage', {
-        color = {255, 0, 0},
-        multiline = true,
-        args = {'client-vehClass', vehClass}
-    })
-
-    TriggerEvent('chat:addMessage', {
-        color = {255, 0, 0},
-        multiline = true,
-        args = {'client-eventName', eventName}
-    })
-
     TriggerEvent(eventName, veh)
-
 end)
+
 
 -- Super - 7
 RegisterNetEvent('tireSpeed:client:checkTires:7')
 AddEventHandler('tireSpeed:client:checkTires:7', function(veh)
 
-    TriggerEvent('chat:addMessage', {
-        color = {255, 0, 0},
-        multiline = true,
-        args = {'event-veh', veh}
-    })
+    oneTire = Config.super.oneTire
+    twoTires = Config.super.twoTires
+    threeTires = Config.super.threeTires
+    fourTires = Config.super.fourTires
 
-    limitSpeed(veh, 60, 40, 20, 10)
+    limitSpeed(veh, oneTire, twoTires, threeTires, fourTires)
 
 end)
 
