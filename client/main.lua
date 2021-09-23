@@ -5,7 +5,7 @@ AddEventHandler('tireSpeed:client:checkTires', function()
  
     local ped = GetPlayerPed(-1)
     local veh = GetVehiclePedIsIn(ped)
-    local vehClass = GetVehicleClass()
+    local vehClass = GetVehicleClass(veh)
 
     local eventName = "tireSpeed:client:checkTires:" .. vehClass
 
