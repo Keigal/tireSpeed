@@ -3,6 +3,12 @@
 RegisterNetEvent('tireSpeed:client:checkTires:0')
 AddEventHandler('tireSpeed:client:checkTires:0', function()
 
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client', 'event reached'}
+    })
+
     limitSpeed(60, 40, 20, 10)
 
 end)
@@ -10,6 +16,12 @@ end)
 -- Sedans - 1
 RegisterNetEvent('tireSpeed:client:checkTires:1')
 AddEventHandler('tireSpeed:client:checkTires:1', function()
+
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client', 'event reached'}
+    })
 
     limitSpeed(60, 40, 20, 10)
 
@@ -19,6 +31,12 @@ end)
 RegisterNetEvent('tireSpeed:client:checkTires:2')
 AddEventHandler('tireSpeed:client:checkTires:2', function()
 
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client', 'event reached'}
+    })
+
     limitSpeed(60, 40, 20, 10)
 
 end)
@@ -26,6 +44,12 @@ end)
 -- Coupes - 3
 RegisterNetEvent('tireSpeed:client:checkTires:3')
 AddEventHandler('tireSpeed:client:checkTires:3', function()
+
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client', 'event reached'}
+    })
 
     limitSpeed(60, 40, 20, 10)
 
@@ -35,6 +59,12 @@ end)
 RegisterNetEvent('tireSpeed:client:checkTires:4')
 AddEventHandler('tireSpeed:client:checkTires:4', function()
 
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client', 'event reached'}
+    })
+
     limitSpeed(60, 40, 20, 10)
 
 end)
@@ -42,6 +72,12 @@ end)
 -- Sports Classics - 5
 RegisterNetEvent('tireSpeed:client:checkTires:5')
 AddEventHandler('tireSpeed:client:checkTires:5', function()
+
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client', 'event reached'}
+    })
 
     limitSpeed(60, 40, 20, 10)
 
@@ -59,6 +95,12 @@ end)
 RegisterNetEvent('tireSpeed:client:checkTires:7')
 AddEventHandler('tireSpeed:client:checkTires:7', function()
 
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client', 'event reached'}
+    })
+
     limitSpeed(60, 40, 20, 10)
 
 end)
@@ -66,6 +108,12 @@ end)
 -- Motorcycles - 8
 RegisterNetEvent('tireSpeed:client:checkTires:8')
 AddEventHandler('tireSpeed:client:checkTires:8', function()
+
+    TriggerEvent('chat:addMessage', {
+        color = {255, 0, 0},
+        multiline = true,
+        args = {'client', 'event reached'}
+    })
 
     limitSpeed(60, 40, 20, 10)
 
