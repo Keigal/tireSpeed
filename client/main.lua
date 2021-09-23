@@ -1,133 +1,50 @@
 
 -- Compacts - 0
-RegisterNetEvent('tireSpeed:client:checkTires:0')
-AddEventHandler('tireSpeed:client:checkTires:0', function()
+RegisterNetEvent('tireSpeed:client:checkTires')
+AddEventHandler('tireSpeed:client:checkTires', function()
+ 
+    local ped = GetPlayerPed(-1)
+    local veh = GetVehiclePedIsIn(ped)
+    local vehClass = GetVehicleClass()
+
+    local eventName = "tireSpeed:client:checkTires:" .. vehClass
 
     TriggerEvent('chat:addMessage', {
         color = {255, 0, 0},
         multiline = true,
-        args = {'client', 'event reached'}
+        args = {'client-vehClass', vehClass}
     })
-
-    limitSpeed(60, 40, 20, 10)
-
-end)
-
--- Sedans - 1
-RegisterNetEvent('tireSpeed:client:checkTires:1')
-AddEventHandler('tireSpeed:client:checkTires:1', function()
 
     TriggerEvent('chat:addMessage', {
         color = {255, 0, 0},
         multiline = true,
-        args = {'client', 'event reached'}
+        args = {'client-eventName', eventName}
     })
 
-    limitSpeed(60, 40, 20, 10)
-
-end)
-
--- SUVs - 2
-RegisterNetEvent('tireSpeed:client:checkTires:2')
-AddEventHandler('tireSpeed:client:checkTires:2', function()
-
-    TriggerEvent('chat:addMessage', {
-        color = {255, 0, 0},
-        multiline = true,
-        args = {'client', 'event reached'}
-    })
-
-    limitSpeed(60, 40, 20, 10)
-
-end)
-
--- Coupes - 3
-RegisterNetEvent('tireSpeed:client:checkTires:3')
-AddEventHandler('tireSpeed:client:checkTires:3', function()
-
-    TriggerEvent('chat:addMessage', {
-        color = {255, 0, 0},
-        multiline = true,
-        args = {'client', 'event reached'}
-    })
-
-    limitSpeed(60, 40, 20, 10)
-
-end)
-
--- Muscle - 4
-RegisterNetEvent('tireSpeed:client:checkTires:4')
-AddEventHandler('tireSpeed:client:checkTires:4', function()
-
-    TriggerEvent('chat:addMessage', {
-        color = {255, 0, 0},
-        multiline = true,
-        args = {'client', 'event reached'}
-    })
-
-    limitSpeed(60, 40, 20, 10)
-
-end)
-
--- Sports Classics - 5
-RegisterNetEvent('tireSpeed:client:checkTires:5')
-AddEventHandler('tireSpeed:client:checkTires:5', function()
-
-    TriggerEvent('chat:addMessage', {
-        color = {255, 0, 0},
-        multiline = true,
-        args = {'client', 'event reached'}
-    })
-
-    limitSpeed(60, 40, 20, 10)
-
-end)
-
--- Sports - 6
-RegisterNetEvent('tireSpeed:client:checkTires:6')
-AddEventHandler('tireSpeed:client:checkTires:6', function()
-
-    limitSpeed(60, 40, 20, 10)
+    TriggerEvent(eventName, veh)
 
 end)
 
 -- Super - 7
 RegisterNetEvent('tireSpeed:client:checkTires:7')
-AddEventHandler('tireSpeed:client:checkTires:7', function()
+AddEventHandler('tireSpeed:client:checkTires:7', function(veh)
 
     TriggerEvent('chat:addMessage', {
         color = {255, 0, 0},
         multiline = true,
-        args = {'client', 'event reached'}
+        args = {'event-veh', veh}
     })
 
-    limitSpeed(60, 40, 20, 10)
+    limitSpeed(veh, 60, 40, 20, 10)
 
 end)
 
--- Motorcycles - 8
-RegisterNetEvent('tireSpeed:client:checkTires:8')
-AddEventHandler('tireSpeed:client:checkTires:8', function()
-
-    TriggerEvent('chat:addMessage', {
-        color = {255, 0, 0},
-        multiline = true,
-        args = {'client', 'event reached'}
-    })
-
-    limitSpeed(60, 40, 20, 10)
-
-end)
-
--- Function to limit speed takes in 4 args which are: oneTire, twoTires, threeTires, fourTires max speeds
-function limitSpeed(oneTire, twoTires, threeTires, fourTires)
+-- Function to limit speed takes in 5 args which are: Vehicle, oneTire, twoTires, threeTires, fourTires max speeds
+function limitSpeed(veh, oneTire, twoTires, threeTires, fourTires)
 
     -- Initializes variables
     local poppedTires = 0
     local maxSpeed = 0.0
-
-    local ped = GetPlayerPed(-1)
-    local veh = GetVehiclePedIsIn(ped)
 
     -- Gets number of poppedTires
     -- Wheel locations are numbered non-standard in FiveM, so we check each location.
