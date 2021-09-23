@@ -18,8 +18,13 @@ Citizen.CreateThread(function()
                 -- Gets owner of vehicle entity
                 local owner = NetworkGetEntityOwner(veh)
 
+                -- Gets vehicle class and creates event string
+                local vehClass = tostring(GetVehicleClass(veh))
+
+                local eventName = "tireSpeed:client:checkTires:" .. vehClass
+
                 -- Tells owner's client to run event to limit speed
-                TriggerClientEvent('tireSpeed:client:checkTires', owner)
+                TriggerClientEvent(eventName, owner)
 
             end
 

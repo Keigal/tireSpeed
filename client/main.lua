@@ -1,8 +1,80 @@
 
--- Event to limit speed of vehicle, server instructs client on when to run event
-RegisterNetEvent('tireSpeed:client:checkTires')
-AddEventHandler('tireSpeed:client:checkTires', function()
+-- Compacts - 0
+RegisterNetEvent('tireSpeed:client:checkTires:0')
+AddEventHandler('tireSpeed:client:checkTires:0', function()
 
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- Sedans - 1
+RegisterNetEvent('tireSpeed:client:checkTires:1')
+AddEventHandler('tireSpeed:client:checkTires:1', function()
+
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- SUVs - 2
+RegisterNetEvent('tireSpeed:client:checkTires:2')
+AddEventHandler('tireSpeed:client:checkTires:2', function()
+
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- Coupes - 3
+RegisterNetEvent('tireSpeed:client:checkTires:3')
+AddEventHandler('tireSpeed:client:checkTires:3', function()
+
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- Muscle - 4
+RegisterNetEvent('tireSpeed:client:checkTires:4')
+AddEventHandler('tireSpeed:client:checkTires:4', function()
+
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- Sports Classics - 5
+RegisterNetEvent('tireSpeed:client:checkTires:5')
+AddEventHandler('tireSpeed:client:checkTires:5', function()
+
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- Sports - 6
+RegisterNetEvent('tireSpeed:client:checkTires:6')
+AddEventHandler('tireSpeed:client:checkTires:6', function()
+
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- Super - 7
+RegisterNetEvent('tireSpeed:client:checkTires:7')
+AddEventHandler('tireSpeed:client:checkTires:7', function()
+
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- Motorcycles - 8
+RegisterNetEvent('tireSpeed:client:checkTires:8')
+AddEventHandler('tireSpeed:client:checkTires:8', function()
+
+    limitSpeed(60, 40, 20, 10)
+
+end)
+
+-- Function to limit speed takes in 4 args which are: oneTire, twoTires, threeTires, fourTires max speeds
+function limitSpeed(oneTire, twoTires, threeTires, fourTires)
+
+    -- Initializes variables
     local poppedTires = 0
     local maxSpeed = 0.0
 
@@ -27,23 +99,22 @@ AddEventHandler('tireSpeed:client:checkTires', function()
     
     elseif (poppedTires == 1)
     then
-        maxSpeed = Config.oneTire * 0.447
+        maxSpeed = oneTire * 0.447
         SetVehicleMaxSpeed(veh, maxSpeed)
     
     elseif (poppedTires == 2)
     then
-        maxSpeed = Config.twoTires * 0.447
+        maxSpeed = twoTires * 0.447
         SetVehicleMaxSpeed(veh, maxSpeed)
     
     elseif (poppedTires == 3)
     then
-        maxSpeed = Config.threeTires * 0.447
+        maxSpeed = threeTires * 0.447
         SetVehicleMaxSpeed(veh, maxSpeed)
     
     else
-        maxSpeed = Config.fourTires * 0.447
+        maxSpeed = fourTires * 0.447
         SetVehicleMaxSpeed(veh, maxSpeed)
     end
 
-
-end)
+end
