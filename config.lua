@@ -15,7 +15,7 @@ Config.threeTires = 60.0
 Config.fourTires = 40.0
 
 -- Super car configuration
-Config.super{
+Config.Super = {
     oneTire = 10.0,
     twoTires = 20.0,
     threeTires = 30.0,
