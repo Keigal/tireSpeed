@@ -16,10 +16,10 @@ end)
 RegisterNetEvent('tireSpeed:client:checkTires:7')
 AddEventHandler('tireSpeed:client:checkTires:7', function(veh)
 
-    oneTire = Config.super.oneTire
-    twoTires = Config.super.twoTires
-    threeTires = Config.super.threeTires
-    fourTires = Config.super.fourTires
+    oneTire = Config.Super.oneTire
+    twoTires = Config.Super.twoTires
+    threeTires = Config.Super.threeTires
+    fourTires = Config.Super.fourTires
 
     limitSpeed(veh, oneTire, twoTires, threeTires, fourTires)
 
